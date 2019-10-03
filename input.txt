@@ -1,0 +1,16 @@
+problem name
+sblong10
+SP_SPH art_stress particle_shift
+T       F               F 
+inside_approach  (delete lines 5 to 10 if SP_SPH = false)
+ T 
+number of stress points
+1                        
+smoothing length factor
+1.2
+time step, time for end, max number of time steps
+0.00001,0.021,10000000
+print, save, plot
+100,100,100
+if end of simulation:
+-1,1,1
