@@ -2,6 +2,8 @@
 Code and documentation for the Stress-Particle SPH method, developed in the PhD project of Caitlin Chalk
 
 Contained are the raw Fortran files (.f90), with example problems and documentation.
+NOTE: The .f90 files are included separately for each problem. 
+      This is because the code is still under development, and needs to be tested for consistency amongst the problems.
 The documentation includes the PhD thesis for which the work was developed, and descriptions of the input files.
 Further documentation is to be added.
 
