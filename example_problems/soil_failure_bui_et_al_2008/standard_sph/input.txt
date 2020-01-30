@@ -1,0 +1,22 @@
+problem name
+co_soil
+SP_SPH art_stress particle_shift art_viscosity
+F       F              F
+smoothing length factor
+1.2
+time step, time for end, max number of time steps
+0.00015,2.5,1000000
+print, save, plot
+100,100,100
+if end of simulation:
+-1,1,1
+
+
+
+time step, time for end, max number of time steps
+0.000015,2.5,10000000
+print, save, plot
+1000,1000,1000
+if end of simulation:
+-1,1,1
+
