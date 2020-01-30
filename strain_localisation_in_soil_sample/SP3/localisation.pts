@@ -1,0 +1,9 @@
+geom_type (1 = rectangular domain, 2 = trapezoid)
+1 
+x1 x2 x3 x4   dx (x-coordinates, horizontal particle spacing)
+0 0.5 0 0.5  0.0125
+y1 y2 y3 y4  dy  (y-coordinates, vertical particle spacing)
+0   0  1  1  0.0125
+dummy_nodes (T if dummy nodes are used, F otherwise)
+F
+
