@@ -2778,62 +2778,61 @@ write(dt_file,formt) itimestep_sph
 open(unit=node_file,file='nodes'//'.csv.'//trim(dt_file))
 
 write(node_file,'(A)', advance = 'no') 'x-coord,'
-write(node_file,'(A)', advance = 'no') 'y-coord,'!, &
-if (vel_out(1) == 1) write(node_file,'(A)', advance = 'no') 'x-vel,' 
-if (vel_out(2) == 1) write(node_file,'(A)', advance = 'no') 'y-vel,' 
-if (stress_out(1) == 1) write(node_file,'(A)', advance = 'no') 'sxx,' 
-if (stress_out(2) == 1) write(node_file,'(A)', advance = 'no') 'syy,' 
-if (stress_out(3) == 1) write(node_file,'(A)', advance = 'no') 'sxy,' 
-if (stress_out(4) == 1) write(node_file,'(A)', advance = 'no') 'szz,' 
-if (strain_out == 1) write(node_file,'(A)', advance = 'no') 'strain,' 
-if (disp_out == 1) write(node_file,'(A)', advance = 'no') 'disp,' 
-if (rho_out == 1) write(node_file,'(A)', advance = 'no') 'density,' 
-if (sml_out == 1) write(node_file,'(A)', advance = 'no') 'sml,' 
+write(node_file,'(A)', advance = 'no') ',y-coord'
+if (vel_out(1) == 1) write(node_file,'(A)', advance = 'no') ',x-vel' 
+if (vel_out(2) == 1) write(node_file,'(A)', advance = 'no') ',y-vel' 
+if (stress_out(1) == 1) write(node_file,'(A)', advance = 'no') ',sxx' 
+if (stress_out(2) == 1) write(node_file,'(A)', advance = 'no') ',syy' 
+if (stress_out(3) == 1) write(node_file,'(A)', advance = 'no') ',sxy' 
+if (stress_out(4) == 1) write(node_file,'(A)', advance = 'no') ',szz' 
+if (strain_out == 1) write(node_file,'(A)', advance = 'no') ',strain' 
+if (disp_out == 1) write(node_file,'(A)', advance = 'no') ',disp' 
+if (rho_out == 1) write(node_file,'(A)', advance = 'no') ',density' 
+if (sml_out == 1) write(node_file,'(A)', advance = 'no') ',sml' 
 write(node_file,*) ' '
 do i = 1,nnode
         write(node_file,'(F16.8)', advance = 'no') x(1,i)
         write(node_file,'(A)',advance = 'no') ','
         write(node_file,'(F16.8)', advance = 'no') x(2,i)
-        write(node_file,'(A)',advance = 'no') ','
         if (vel_out(1) == 1) then
+		        write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') vel(1,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (vel_out(2) == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') vel(2,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (stress_out(1) == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') stress(1,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (stress_out(2) == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') stress(2,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (stress_out(3) == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') stress(3,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (stress_out(4) == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') stress(4,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (strain_out == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') internal_vars(1,i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (disp_out == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') sqrt(displ(1,i)**2 + displ(2,i)**2) 
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (rho_out == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') rho(i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         if (sml_out == 1) then
+				write(node_file,'(A)',advance = 'no') ','
                 write(node_file,'(F16.8)', advance = 'no') hsml(i)
-                write(node_file,'(A)',advance = 'no') ','
         end if
         write(node_file,*) ' '
 end do
